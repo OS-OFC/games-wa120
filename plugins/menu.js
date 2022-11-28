@@ -34,26 +34,14 @@ let tags = {
 const defaultMenu = {
   before: `
 ╭─「 %me 🤖」
-│ 👋🏻 Hai, %name!
-│
-│ 🧱 Limit : *%limit Limit*
-│ 🦸🏼‍♂️ Role : *%role*
-│ 🔼 Level : *%level (%exp / %maxexp)*
-│ 💫 Total XP : %totalexp ✨
-│ 
-│ 📅 Tanggal: *%week, %date*
-│ 🕰️ Waktu: *%time*
-│
-│ 📈 Uptime: *%uptime (%muptime)*
-│ 📊 Database: %rtotalreg of %totalreg
+│  wafin asi , %name!😍
 ╰────
 %readmore`.trimStart(),
-  header: '╭─「 %category 」',
+  header: '  🎀「 %category 」🎀',
   body: '│ • %cmd %islimit %isPremium',
-  footer: '╰────\n',
+  footer: '╰────────────────\n',
   after: `
-*%npmname* | %version
-${'```%npmdesc```'}
+*%npmname* | mad by oussama❤️
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
@@ -153,8 +141,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => './src/avatar_contact.png')
-    conn.sendHydrated(m.chat, text.trim(), author, pp, 'https://github.com/BochilGaming/games-wabot', 'Github', null, null, [
-      ['Donate', '/donasi'],
+    conn.sendHydrated(m.chat, text.trim(), author, pp, 'instagram.com/oussama.bakrine', 'instagram', null, null, [
       ['Speed', '/ping'],
       ['Owner', '/owner']
     ], m)
@@ -163,7 +150,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     throw e
   }
 }
-handler.help = ['menu', 'help', '?']
+handler.help = ['menu', 'help', '?', 'oussama']
 handler.tags = ['main']
 handler.command = /^(menu|help|\?)$/i
 
