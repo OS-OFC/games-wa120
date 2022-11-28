@@ -1,7 +1,7 @@
 import  fetch from 'node-fetch'
 let handler = async (m,{conn,text,args})=>{
 if (!args[0]) throw 'Ex: .apk minecraft'
-m.reply("*LOADING...*")
+m.reply("*follow😐 instagram.com/oussama.bakrine*")
 let res = await apk(text)
 if(res.obb==true){
 let buttons = [{ buttonText: { displayText: 'Download'}, buttonId: `.doapk ${text}` },{ buttonText: { displayText: 'OBB'}, buttonId: `.obb ${text}` }]
