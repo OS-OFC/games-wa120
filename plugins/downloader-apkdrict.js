@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 let handler = async (m, { conn, args, text , usedPrefix, command }) => {
 	if (!args[0]) throw 'Ex: '+usedPrefix + command+' minecraft'
 	let res = await apk(text)
-	await m.reply('_In progress, please wait..._')
+	await m.reply('_صبر شوية اخاي..._')
 	conn.sendMessage(m.chat, { document: { url: res.download }, mimetype: res.mimetype, fileName: res.fileName }, { quoted: m })
 }
 handler.command = /^(doapk)$/i
