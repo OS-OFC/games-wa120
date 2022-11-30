@@ -33,15 +33,15 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-╭─「 %me 🤖」
+╭─「 OS BOT ❤️ 🤖」
 │  wafin asi , %name!😍
 ╰────
 %readmore`.trimStart(),
   header: '  🎀「 %category 」🎀',
   body: '│ • %cmd %islimit %isPremium',
-  footer: '╰────────────────\n',
+  footer: '╰\n',
   after: `
-*%npmname* | mad by oussama❤️
+*OS-bot*| mad by oussama❤️
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
@@ -141,7 +141,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     const pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => './src/avatar_contact.png')
-    conn.sendHydrated(m.chat, text.trim(), author, pp, 'instagram.com/oussama.bakrine', 'instagram', null, null, [
+    conn.sendHydrated(m.chat, text.trim(), author, pp, 'https://www.instagram.com/oussama.bakrine', 'instagram', null, null, [
       ['Speed', '/ping'],
       ['Owner', '/owner']
     ], m)
